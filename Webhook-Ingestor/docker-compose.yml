@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SQLITE_URL=sqlite:///./webhooks.db
+    volumes:
+      - ./webhooks.db:/app/webhooks.db
